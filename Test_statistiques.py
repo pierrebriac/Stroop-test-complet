@@ -49,21 +49,36 @@ def enregistrer_dans_pdf(texte):
     pdf.multi_cell(0, 10, txt=texte)
 
     # Enregistrer le document PDF dans un fichier
-    nom_fichier = "Statistiques.pdf"
+    nom_fichier = "Résultats des analyses statistiques.pdf"
     pdf.output(nom_fichier)
 
 def Resultat(t_time, p_time_sex, t_pct, p_pct, corr, p_age, corr_pct_time, p_time):
     resultat_texte = ''
+    # Test de Student pour les temps de réponse
     resultat_texte += 'Test de Student pour les temps de réponse:\n'
     resultat_texte += '  t-value: ' + str(t_time) + '\n'
     resultat_texte += '  p-value: ' + str(p_time_sex) + '\n'
+    resultat_texte += 'Ce test permet de déterminer si les temps de réponse sont significativement différents entre les hommes et les femmes.\n\n'
+    
+    # Test de Student pour les pourcentages de bonnes réponses
     resultat_texte += 'Test de Student pour les pourcentages de bonnes réponses:\n'
     resultat_texte += '  t-value: ' + str(t_pct) + '\n'
     resultat_texte += '  p-value: ' + str(p_pct) + '\n'
-    resultat_texte += 'La corrélation entre l\'âge et le pourcentage de bonnes réponses est de : ' + str(corr) + '\n'
-    resultat_texte += 'La p-value de la corrélation est de : ' + str(p_age) + '\n'
-    resultat_texte += 'La corrélation entre le pourcentage de bonnes réponses et la vitesse de réponse est de : ' + str(corr_pct_time) + '\n'
-    resultat_texte += 'La p-value de la corrélation est de : ' + str(p_time) + '\n'
+    resultat_texte += 'Ce test permet de déterminer si les pourcentages de bonnes réponses sont significativement différents entre les hommes et les femmes. \n\n'
+    
+    # Corrélation entre l'âge et le pourcentage de bonnes réponses
+    resultat_texte += 'Corrélation entre l\'âge et le pourcentage de bonnes réponses:\n'
+    resultat_texte += '  coefficient de corrélation: ' + str(corr) + '\n'
+    resultat_texte += '  p-value: ' + str(p_age) + '\n'
+    resultat_texte += 'Cette corrélation permet de déterminer s\'il y a une relation entre l\'âge et le pourcentage de bonnes réponses. \n\n'
+    
+    # Corrélation entre le pourcentage de bonnes réponses et la vitesse de réponse
+    resultat_texte += 'Corrélation entre le pourcentage de bonnes réponses et la vitesse de réponse:\n'
+    resultat_texte += '  coefficient de corrélation: ' + str(corr_pct_time) + '\n'
+    resultat_texte += '  p-value: ' + str(p_time) + '\n'
+    resultat_texte += 'Cette corrélation permet de déterminer s\'il y a une relation entre le pourcentage de bonnes réponses et la vitesse de réponse.' 
+    resultat_texte += 'Si le coefficient de corrélation est positif, cela signifie que les participants qui répondent plus lentement ont tendance à avoir un pourcentage de bonnes réponses plus élevé.\n\n'
+    
     print(resultat_texte)
     return resultat_texte
 
