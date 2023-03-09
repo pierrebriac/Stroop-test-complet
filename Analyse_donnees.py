@@ -4,8 +4,7 @@ import os
 import csv
 import pandas as pd
 
-
-def val_manquantes(data, id_participant):
+def val_manquantes(data, id_participant, loc_glob):
     # On regarde les données manquantes
     missing_values = data.isnull().sum()
     missing_values_df = pd.DataFrame(missing_values, columns=['Nombre de valeurs manquantes'])
@@ -14,6 +13,11 @@ def val_manquantes(data, id_participant):
 
     # Visualisation des valeurs manquantes à l'aide de la méthode heatmap de seaborn
     sns.heatmap(data.isnull(), cbar=False, cmap='plasma')
+    if loc_glob == "loc":
+        plt.title('Heatmap des valeurs manquantes du participant ' + str(id_participant))
+    else:
+        plt.title("Heatmap des valeurs manquantes de l'ensemble des données")
+    plt.show()
     plt.show()
     plt.close()
 
@@ -67,13 +71,11 @@ def score(data_participant, data_global):
     mean_parti = data_participant["Temps de reponse"].mean()
     afficher_resultats(pourcentage_bonnes_reponses_glob, pourcentage_bonnes_reponses_parti, mean_groupe, mean_parti)
 
-def statistiques(id_entry):
+def statistiques(id_participant):
     # Importer mon data frame global
     data_global = pd.read_csv("Global.csv")
-    # Ouvrir data frame du participant
-    #id_participant = id_entry.get()
-    id_participant = 1
 
+    # Ouvrir data frame du participant
     dossier = os.path.join(os.environ['HOME'], 'Desktop', 'Stroop_test', 'Resultat_individuel')
     filename = os.path.join(dossier, "Donnees_participant_" + str(id_participant) + ".csv")
     name = "Donnees_participant_" + str(id_participant) + ".csv"
@@ -81,5 +83,5 @@ def statistiques(id_entry):
     data_participant = pd.read_csv(filename)
     recodage(data_participant, name, data_global)
     score(data_participant, data_global)
-    val_manquantes(data_participant, id_participant)
-    val_manquantes(data_global, id_participant)
+    val_manquantes(data_participant, id_participant, "loc")
+    val_manquantes(data_global, id_participant, "glob")

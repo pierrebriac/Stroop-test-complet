@@ -3,10 +3,8 @@ import pandas as pd
 from Paradigme_stroop import stroop
 import tkinter as tk
 from Enregistre_answer import enregistrer_donnees
-from Analyse_donnees import val_manquantes, recodage, afficher_resultats, score, statistiques
 import os
 import re
-from Test_statistiques import Analyse_result, enregistrer_dans_pdf, Resultat, Graphique
 
 # Fonction pour vérifier les entrées utilisateur
 def check_inputs_donnees():
@@ -138,6 +136,5 @@ def show_experiment_information_window():
 
 # Lancer la fenêtre principale
 root.mainloop()
-statistiques(id_participant)
-Analyse_result()
+
 
