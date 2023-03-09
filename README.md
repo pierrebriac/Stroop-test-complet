@@ -20,6 +20,7 @@ The code is written in Python and uses the following libraries:
 
 ## Usage
 
+Once the file has been downloaded, it must be placed on the desktop and named Stroop_test
 To use the Stroop test, run the Python script Stroop_test.py. A window will appear asking for the participant's information (name, age, sex, and ID). After filling out the information, click the "Continue" button to start the test.
 
 The Stroop test consists of 10 trials, and the participant's answers and response times are recorded in a CSV file. The file is saved in a folder named "Stroop_test" on the participant's desktop.
@@ -59,6 +60,7 @@ Le code est écrit en Python et utilise les bibliothèques suivantes :
 
 ## Utilisation
 
+Une fois le dossier téléchargé il faut le déposer sur le bureau et le nommer Stroop_test.
 Pour utiliser le test de Stroop, exécutez le script Python Stroop_test.py. Une fenêtre apparaîtra demandant les informations du participant (nom, âge, sexe et ID). Après avoir rempli les informations, cliquez sur le bouton "Continuer" pour commencer le test.
 
 Le test de Stroop se compose de 10 épreuves, et les réponses et les temps de réponse du participant sont enregistrés dans un fichier CSV. Le fichier est enregistré dans un dossier nommé "Stroop_test" sur le bureau du participant.
