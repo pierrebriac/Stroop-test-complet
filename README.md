@@ -28,7 +28,8 @@ After completing the test, the code generates a PDF report that includes the par
 
 There is already a file with data that is not confidential (personal data) as well as files created by the code as an example. You can remove them to run the code.
 
-
+# Statistics
+To start the analysis of the results just call python main_stats.py in the terminal.
 Regarding statistics, there is a comparison of the participant to the rest of the group, an analysis of missing data. There are also two t-tests to find out if the participants differed by gender on the response time and percent correct variables.
 
 We then look at whether there is a correlation between percentages of correct answers and speed of responding, and between age and percentage of correct answers.
@@ -62,6 +63,9 @@ Pour utiliser le test de Stroop, exécutez le script Python Stroop_test.py. Une 
 
 Le test de Stroop se compose de 10 épreuves, et les réponses et les temps de réponse du participant sont enregistrés dans un fichier CSV. Le fichier est enregistré dans un dossier nommé "Stroop_test" sur le bureau du participant.
 Il y a déjà un fichier avec des données qui ne sont pas confidentielles (données personnelles) ainsi que des fichiers créés par le code à titre d'exemple. Vous pouvez les supprimer pour lancer le code.
+
+# Statistiques 
+Pour lancer l'analyse des résultats il suffit d'appeler python main_stats.py dans le terminal.
 
 Concernant les statistiques, il y a une comparaison du participant au reste du groupe, une analyse des données manquantes. Il y a aussi deux tests t pour savoir si les participants diffèrent en fonction du sexe sur les variables temps de réponse et pourcentage de bonne réponse.
 
